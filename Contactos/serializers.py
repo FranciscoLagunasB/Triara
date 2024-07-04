@@ -23,4 +23,4 @@ class ContactoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contacto
-        fields = ['id', 'nombres', 'apellido_paterno', 'apellido_materno', 'fecha_nacimiento', 'alias', 'foto', 'correos', 'telefonos', 'direcciones']
+        fields = ['contacto_PK', 'nombres', 'apellido_paterno', 'apellido_materno', 'fecha_nacimiento', 'alias', 'foto', 'correos', 'telefonos', 'direcciones']

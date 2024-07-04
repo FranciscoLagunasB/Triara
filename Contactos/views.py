@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Contacto
+from .serializers import ContactoSerializer
 
-# Create your views here.
+class ContactoListAPIView(generics.ListAPIView):
+    queryset = Contacto.objects.all()
+    serializer_class = ContactoSerializer

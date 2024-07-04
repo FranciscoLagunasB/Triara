@@ -79,14 +79,15 @@ WSGI_APPLICATION = 'back_API.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Contactos',
-        'USERNAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '5432', 
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -130,7 +131,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 #CORS AUTHENTICATION
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
+    "http://localhost:3000"
 ]
