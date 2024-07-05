@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import ContactoListAPIView
+from .views import ContactoAPIView
 
 urlpatterns = [
-    path('contactos/', ContactoListAPIView.as_view(), name='contacto-list'),
-    # Otras URLs de la app Contactos si las tienes
+    path('contactos/', ContactoAPIView.as_view(), name='contacto-list'),
+    path('contactos/<int:pk>/', ContactoAPIView.as_view(), name='contacto-detail'),
 ]
