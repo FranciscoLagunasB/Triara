@@ -230,3 +230,98 @@ class Direccion(models.Model):
    Abre [http://localhost:8000](http://localhost:8000) para ver la aplicación.
 
 ---
+
+Para copiar y configurar el repositorio de tu proyecto de catálogo de contactos, siguiendo los pasos para instalar y ejecutar tanto el backend de Django como el frontend en React, aquí tienes los pasos detallados:
+
+### Clonar y Configurar el Repositorio
+
+1. **Clonar el Repositorio:**
+
+   Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub (o tu repositorio remoto):
+
+   ```bash
+   git clone <url_del_repositorio>
+   ```
+
+   Sustituye `<url_del_repositorio>` con la URL de tu repositorio de GitHub.
+
+2. **Configurar el Backend Django:**
+
+   Asegúrate de tener Python y Django instalados en tu sistema. Luego, configura el entorno virtual y las dependencias del proyecto:
+
+   ```bash
+   cd backend
+   python -m venv venv
+   source venv/bin/activate  # Para macOS/Linux
+   # venv\Scripts\activate    # Para Windows
+   pip install -r requirements.txt
+   ```
+
+   Esto creará un entorno virtual y luego instalará todas las dependencias especificadas en `requirements.txt`.
+
+3. **Configurar la Base de Datos:**
+
+   Asegúrate de tener PostgreSQL instalado y configurado. Puedes modificar la configuración de la base de datos en `backend/settings.py` según sea necesario.
+
+   Luego, realiza las migraciones para configurar la base de datos:
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+4. **Iniciar el Backend Django:**
+
+   Una vez configurada la base de datos, inicia el servidor de desarrollo de Django:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   El servidor se iniciará en `http://localhost:8000`.
+
+5. **Configurar el Frontend React:**
+
+   Ahora, dirígete al directorio del frontend y configura las dependencias de React:
+
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+6. **Iniciar el Frontend React:**
+
+   Una vez que se hayan instalado todas las dependencias de React, puedes iniciar el servidor de desarrollo:
+
+   ```bash
+   npm start
+   ```
+
+   El servidor de desarrollo de React se iniciará en `http://localhost:3000`.
+
+### Acceder a la Aplicación
+
+Ahora que ambos servidores (Django backend y React frontend) están en funcionamiento, puedes acceder a la aplicación desde tu navegador:
+
+- **Backend Django:** Accede a `http://localhost:8000` para verificar que el backend esté funcionando correctamente y para interactuar con la API de contactos.
+
+- **Frontend React:** Accede a `http://localhost:3000` para ver la interfaz de usuario del catálogo de contactos. Aquí podrás crear, editar y eliminar contactos, además de gestionar correos electrónicos, teléfonos y direcciones asociadas.
+
+Con estos pasos, deberías poder clonar el repositorio de tu proyecto, configurar tanto el backend de Django como el frontend en React, e iniciar ambos servidores para ejecutar la aplicación de catálogo de contactos en tu entorno local.
+
+
+##Visualización Final
+Para visualizar la aplicación final, asegúrate de tener tanto el servidor de desarrollo de React como el servidor de Django ejecutándose simultáneamente. Utiliza las rutas y los componentes adecuados para interactuar con el backend y mostrar los datos de contactos de manera efectiva en tu interfaz de usuario.
+
+Con estos pasos detallados, deberías tener una configuración básica y funcional del frontend en React integrado con tu backend Django para el catálogo de contactos.
+
+Inicio de la aplicación
+![alt text](Inicio.JPG)
+Generar nuevo registro
+![alt text](<Nuevo registroJPG.JPG>) 
+Visualización de detalles
+![alt text](DetallesJPG.JPG)
+Edición
+![alt text](Edición.jpg)
+Diseño responsive
+![alt text](responsive.jpg) 
