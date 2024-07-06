@@ -29,8 +29,12 @@ class ContactoAPIView(APIView):
             apellido_materno=data['apellido_materno'],
             fecha_nacimiento=data['fecha_nacimiento'],
             alias=data['alias'],
-            foto=data['foto']
         )
+
+        if 'foto' in data and data['foto']:
+            nuevo_contacto.foto = data['foto']
+            nuevo_contacto.save()
+
 
         for correo in data['correos']:
             Correo.objects.create(contacto=nuevo_contacto, correo=correo)
@@ -58,7 +62,7 @@ class ContactoAPIView(APIView):
         # Serializar el nuevo contacto creado
         serializer = ContactoSerializer(nuevo_contacto)
 
-        # Devolver solo el nuevo registro creado
+        # Devolver registro creado
         return JsonResponse({'status': True, 'data': serializer.data}, status=201)
     
     def put(self, request, pk):
@@ -67,20 +71,20 @@ class ContactoAPIView(APIView):
                 data = json.loads(request.body)
             except json.JSONDecodeError as e:
                 return JsonResponse({'error': 'Error en el JSON de la solicitud'}, status=400)
-            
-            print(data)
 
             try:
                 contacto = Contacto.objects.get(contacto_PK=pk)
             except Contacto.DoesNotExist:
                 return JsonResponse({'message': 'Contacto no encontrado'}, status=404)
-
+        
             contacto.nombres = data['nombres']
             contacto.apellido_paterno = data['apellido_paterno']
             contacto.apellido_materno = data['apellido_materno']
             contacto.fecha_nacimiento = data['fecha_nacimiento']
             contacto.alias = data['alias']
-            contacto.foto = data['foto'] if data['foto'] is not None else None
+            if 'foto' in data and data['foto']:
+                contacto.foto = data['foto']
+
             contacto.save()
 
             # Actualizar correos
@@ -209,13 +213,10 @@ class ContactoAPIView(APIView):
             try:
                 serialized_data = json.dumps({'updated': True, 'data': data_actualizada}, cls=DjangoJSONEncoder)
             except TypeError as e:
-                print(str(e))
-                print("dfhgdgdhdjk")
                 return JsonResponse({'error': 'Error al serializar los datos'}, status=500)
 
             return JsonResponse(json.loads(serialized_data), safe=False)
         except Exception as e:
-            print(str(e))
             return JsonResponse({'error': str(e)}, status=500)
 
 

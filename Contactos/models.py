@@ -7,8 +7,7 @@ class Contacto(models.Model):
     apellido_materno = models.CharField(max_length=100)
     fecha_nacimiento = models.DateField()
     alias = models.CharField(max_length=50)
-    foto = models.ImageField(upload_to='fotos/', null=True, blank=True)
-    foto_binario = models.BinaryField(null=True, blank=True)
+    foto = models.TextField(blank=True, null=True)
 
 class Correo(models.Model):
     correo_PK = models.AutoField(primary_key=True)
