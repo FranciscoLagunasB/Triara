@@ -11,19 +11,21 @@ Este proyecto implementa un catálogo simple de contactos, permitiendo la gesti�
 1. **Lenguaje de Programación Back-end**
    - El proyecto está desarrollado en Python utilizando el framework Django.
 
-2. **Código**
-   - Se enfatiza en la calidad, legibilidad y documentación del código.
+2. **Lenguaje de Programación Front-end**
+   - El proyecto está desarrollado utilizando el framework React.
 
-3. **Base de Datos**
+3. **Código**
+   - Se procuro realizar un código limpio y legible para manipulación, creación o ajustes para mayor escalabilidad gracias a la creación de modulos.
+
+4. **Base de Datos**
    - Se utiliza PostgreSQL como base de datos relacional.
-   - Se recomienda el uso de transacciones y/o procedimientos almacenados.
    - Incluye un diagrama Entidad-Relación y un diccionario de datos.
 
-4. **Arquitectura**
-   - Existe una separación mínima entre capas de lógica y presentación en el código fuente.
+5. **Arquitectura**
+   - Se genero separación entre las capas del sistema.
 
 5. **Interfaz de Usuario**
-   - HTML bien formado, CSS y operaciones programadas en JavaScript (validaciones del lado del cliente).
+   - Se ha generado una interfaz de usuario limpia para el manejo del usuario, así como un sitio resposive para uso en dispositivos moviles.
 
 ### Definición del Problema
 
@@ -91,7 +93,7 @@ El sistema debe proporcionar al menos:
   - `apellido_materno`: VARCHAR
   - `fecha_nacimiento`: DATE
   - `alias`: VARCHAR
-  - `foto`: VARCHAR (ruta o nombre del archivo .png)
+  - `foto`: VARCHAR (Se puede manejar de diversas formas en este caso se implemento por varchar)
 
 - **Tabla `CorreoElectronico`:**
   - `id`: INT (PK)
@@ -143,7 +145,7 @@ El sistema debe proporcionar al menos:
 2. **Instalación de Dependencias Adicionales**
 
    ```bash
-   pip install pillow  # Para trabajar con imágenes (p.ej. foto de perfil)
+   pip install pillow
    ```
 
 #### Configuración de la Base de Datos en PostgreSQL
@@ -317,13 +319,21 @@ Para visualizar la aplicación final, asegúrate de tener tanto el servidor de d
 
 Con estos pasos detallados, deberías tener una configuración básica y funcional del frontend en React integrado con tu backend Django para el catálogo de contactos.
 
-Inicio de la aplicación
+##Inicio de la aplicación
+
 ![alt text](Inicio.JPG)
-Generar nuevo registro
+
+##Generar nuevo registro
+
 ![alt text](<Nuevo registroJPG.JPG>) 
-Visualización de detalles
+
+##Visualización de detalles
+
 ![alt text](DetallesJPG.JPG)
-Edición
+
+##Edición
+
 ![alt text](Edición.jpg)
-Diseño responsive
+##Diseño responsive
+
 ![alt text](responsive.jpg) 
