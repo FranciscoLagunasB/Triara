@@ -244,10 +244,8 @@ Para copiar y configurar el repositorio de tu proyecto de catálogo de contactos
    Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub (o tu repositorio remoto):
 
    ```bash
-   git clone <url_del_repositorio>
+   git clone [<url_del_repositorio>](https://github.com/FranciscoLagunasB/Triara.git)
    ```
-
-   Sustituye `<url_del_repositorio>` con la URL de tu repositorio de GitHub.
 
 2. **Configurar el Backend Django:**
 
