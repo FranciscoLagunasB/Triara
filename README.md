@@ -49,7 +49,7 @@ El sistema debe proporcionar al menos:
 
 #### Modelo Entidad-Relación (MER)
 
-![alt text](ERM-1.png)
+![alt text](ERD.JPG)
 
 - **Tabla `Usuario`:**
   - `id` (PK)
